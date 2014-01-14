@@ -1,24 +1,77 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-    <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 
-        <script type="text/javascript" src="js/demo.js"></script>
-        <script type="text/javascript" src="js/swfobject.js"></script>
-        <script type="text/javascript" src="js/sms_setup.js"></script>
- </head>
- <body>
-    <div style="width: 640px; height: 480px;">
-        <div id="flashContent">
-            <script type="text/javascript">
-                var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
-                document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" );
-            </script>
-        </div>
-    </div>
+		<!-- <script type="text/javascript" src="js/demo.js"></script> -->
+		<!-- <script type="text/javascript" src="js/swfobject.js"></script> -->
+		<!-- <script type="text/javascript" src="js/sms_setup.js"></script> -->
 
-   </body>
+		<link href="css/main.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<h1>Brilliant.io</h1>
+			<div>
+				<a>Log in with GitHub</a>
+				<a>Log in with Twitter</a>
+			</div>
+		</header>
+		<div id="content">
+
+			<div class="site-intro">
+				<h3>What is Brilliant.io?</h3>
+				<p>
+					Brilliant .io is a website that teaches you about all things web development. We have videos and articles that are suitable for developers of all skill levels. Whether you are just starting out or are looking to further your expertise, we have you covered!
+				</p>
+				<span>Your journey to brilliance starts here</span>
+				<a>Log in with GitHub</a>
+				<a>Log in with Twitter</a>
+			</div>
+			<div id="vid">
+				<h2>Video Title</h2>
+				<div class="video"></div>
+				<!-- <div style="width: 640px; height: 480px;">
+				<div id="flashContent">
+				<script type="text/javascript">
+				var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
+				document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" );
+				</script>
+				</div>
+				</div> -->
+
+				<div class="details">
+					<h3>Details</h3>
+					<p>
+						Details Here
+					</p>
+				</div>
+			</div>
+			<div id="chat">
+				<h3>Chat with others watching now!</h3>
+				<div class="messages">
+					<div class="message">
+						<img />
+						<span class="name"></span>
+						<p>
+							Message here
+						</p>
+					</div>
+				</div>
+				<div class="input-area">
+					<textarea placeholder="Write your comment here..."></textarea>
+					<button>
+						Send
+					</button>
+				</div>
+			</div>
+		</div>
+		<footer>
+
+		</footer>
+	</body>
 </html>
