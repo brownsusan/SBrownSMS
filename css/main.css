@@ -38,7 +38,8 @@ table {
 header {
 	height: 65px;
 	width: 100%;
-	background: #f2b66d;
+	background: #f16935;
+	background-image: url('/img/wood.png');
 	line-height: 65px;
 }
 
@@ -47,8 +48,12 @@ h1, h2, h3, h4, a {
 }
 
 a {
-	text-decoration: underline;
 	display: block;
+	color: #24c9df;
+}
+
+a:hover{
+	text-decoration: underline;
 }
 
 h1, h2 {
@@ -57,10 +62,24 @@ h1, h2 {
 
 h2 {
 	color: #25c9e2;
+	font-size: 12px;
+	margin-bottom: 10px;
 }
 
 h3, header a {
+	font-size: 16px;
+}
+
+h3{
 	color: #f16935;
+}
+
+header a{
+	display:block;
+	background: #fa7d4d;
+	padding: 1px 10px;
+	color: #fff;
+	width: 150px;
 }
 
 header h1 {
@@ -89,10 +108,21 @@ header div {
 
 .site-intro {
 	margin: 20px 0;
-	padding: 10px;
-	border: 2px solid #555;
+	border: 1px solid #ffc785;
 	border-radius: 4px;
 }
+
+.site-intro h3{
+	background:#ffc785;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+}
+
+.site-intro h3, .site-intro div{
+	padding: 5px 10px;
+}
+
 
 /** Video */
 
@@ -121,7 +151,7 @@ header div {
 
 .message-header {
 	padding: 10px;
-	background: #f2b578;
+	background: #ffc785;
 	height: 24px;
 }
 
@@ -133,11 +163,10 @@ header div {
 
 .message {
 	padding: 10px;
-	border-bottom: 1px solid #f2b578;
 }
 
 .message:nth-child(even) {
-	background: #ff00ff;
+	background: #ebebeb;
 }
 
 .message-input-container {
