@@ -141,6 +141,24 @@ header div {
 	height: 480px;
 }
 
+/** Controls */
+.seek-bar{
+	width: 640px;
+	height: 20px;
+	background:#24C9DF;
+}
+
+.video-controls div{
+	display: block;
+	float: left;
+	width: 126px;
+	height: 60px;
+	color: #ebebeb;
+	background: #000;
+	border: 1px solid #222;
+}
+
+
 /** Chat */
 
 #chat {
@@ -157,7 +175,7 @@ header div {
 
 .message-container {
 	border: 1px solid #f2b578;
-	height: 470px;
+	height: 455px;
 	overflow-y: scroll;
 }
 
@@ -170,7 +188,7 @@ header div {
 }
 
 .message-input-container {
-	border: 1px solid #f16841;
+	border: 1px solid #fa7d4d;
 	position: relative;
 	height: 60px;
 }
@@ -186,7 +204,7 @@ header div {
 }
 
 #message_button {
-	background: #f16841;
+	background: #fa7d4d;
 	float: right;
 	width: 20%;
 	padding: 0;
