@@ -1,24 +1,95 @@
-function flashReady() {
-	console.log("flash ready");
+var seeking = true;
+var videoDuration = 0;
 
-	$(".play-pause").on("click", function() {
-		console.log('play-pause');
+function flashReady() {
+	var cameras = flash.getCameras();
+	var mics = flash.getMicrophones();
+
+	for (var i = 0, j = cameras.length; i < j; i++) {
+
+		$('#cameras').append($('<option>', {
+			'value' : i,
+			'text' : cameras[i]
+		}));
+
+	}
+
+	for (var i = 0, j = mics.length; i < j; i++) {
+
+		$('#mics').append($('<option>', {
+			'value' : i,
+			'text' : mics[i]
+		}));
+
+	}
+
+	flash.connect('rtmp://localhost/SMSServer');
+
+	$('#start-playing').click(function() {
+
+		flash.stopPlaying();
+
+		var filename = $('#playback-title').val();
+		flash.startPlaying(filename);
+	});
+
+	$("#play-pause").on("click", function() {
+		flash.playPause();
+	});
+
+	$('#seek-bar').mousedown(function() {
+		seeking = false;
+	});
+
+	$('#seek-bar').mouseup(function() {
+		seeking = true;
+
+		var videoPercent = $(this).val() / 100;
+		var videoTime = videoPercent * videoDuration;
+
+		flash.setTime(videoTime);
 	});
 
 	$(".record").on("click", function() {
 		console.log('record');
 	});
 
-	$(".camera-select").on("click", function() {
-		console.log('select camera');
+	$('#volume').change(function() {
+
+		var videoVolume = $(this).val() / 100;
+
+		flash.setVolume(videoVolume);
+
 	});
 
-	$(".mic-select").on("click", function() {
-		console.log('select mic');
+	$('#start-recording').click(function() {
+
+		var filename = $('#recording-title').val();
+		var cameraIndex = $('#cameras').val();
+		var microphoneIndex = $('#mics').val();
+
+		flash.startRecording(filename, cameraIndex, microphoneIndex);
+
 	});
 
-	$(".volume").on("click", function() {
-		console.log('volume');
+	$('#stop-recording').click(function() {
+		flash.stopRecording();
 	});
 
+}
+
+function getDuration(duration) {
+	videoDuration = duration;
+}
+
+function seekTime(time) {
+	if (seeking) {
+		var videoPercent = (time / videoDuration) * 100;
+		$('#seek-bar').val(videoPercent);
+	}
+}
+
+function connected() {
+	var filename = $('#playback-title').val();
+	flash.startPlaying(filename);
 }

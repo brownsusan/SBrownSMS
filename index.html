@@ -22,23 +22,11 @@
 		</header>
 		<div id="content">
 
-			<div class="site-intro">
-				<h3>What is Brilliant?</h3>
-				<div>
-					<p>
-						Brilliant is a website that teaches you about all things web development. We have videos and articles that are suitable for developers of all skill levels. Whether you are just starting out or are looking to further your expertise, we have you covered!
-					</p>
-					<span>Your journey to brilliance starts here</span>
-					<a>Log in with GitHub</a>
-					<a>Log in with Twitter</a>
-				</div>
-			</div>
+			<!-- <h2 class="video-title">Video Title</h2> -->
 
-			<h2 class="video-title">Video Title</h2>
+			<div id="video">
 
-			<div id="vid">
-
-				<div class="video">
+				<div class="player">
 					<div id="flashContent">
 						<script type="text/javascript">
 							var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
@@ -48,27 +36,23 @@
 				</div>
 
 				<div class="video-controls">
-					<input type="range" class="seek-bar" />
-					<div class="play-pause">
-						<span>play/pause</span>
-					</div>
-					<div class="record">
-						<span>record</span>
-					</div>
+					<input type="range" value="0" min="0" max="100" id="seek-bar" />
+					<input type="text" id="playback-title" value="hobbit_vp6" />
+					<button id="start-playing">Start Playing</button>
+					<button id="play-pause">
+						Play/Pause
+					</button>
+					<input type="range" value="100" min="0" max="100" id="volume" />
 					<div>
-						<select>
-							<option value="cam1">Cam1</option>
-							<option value="cam2">Cam2</option>
-						</select>
-					</div>
-					<div>
-						<select>
-							<option value="mic1">Mic1</option>
-							<option value="mic2">Mic2</option>
-						</select>
-					</div>
-					<div>
-						<input type="range" class="volume" />
+						<input type="text" id="recording-title" placeholder="Enter a title for your recording" />
+						<select id="cameras"></select>
+						<select id="mics"></select>
+						<button id="start-recording">
+							Start Recording
+						</button>
+						<button id="stop-recording">
+							Stop Recording
+						</button>
 					</div>
 				</div>
 
@@ -192,49 +176,22 @@
 						Send
 					</button>
 				</div>
-
+				<div class="site-intro">
+					<h3>What is Brilliant?</h3>
+					<div>
+						<p>
+							Brilliant is a website that teaches you about all things web development. We have videos and articles that are suitable for developers of all skill levels. Whether you are just starting out or are looking to further your expertise, we have you covered!
+						</p>
+						<span>Your journey to brilliance starts here</span>
+						<a>Log in with GitHub</a>
+						<a>Log in with Twitter</a>
+					</div>
+				</div>
 			</div>
 			<footer>
 
 			</footer>
 		</div>
-
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
 
 		<script type="text/javascript" src="js/main.js"></script>
 

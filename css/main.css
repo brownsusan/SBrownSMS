@@ -41,6 +41,7 @@ header {
 	background: #f16935;
 	background-image: url('/img/wood.png');
 	line-height: 65px;
+	margin-bottom: 40px;
 }
 
 h1, h2, h3, h4, a {
@@ -126,7 +127,7 @@ header div {
 
 /** Video */
 
-#vid {
+#video {
 	float: left;
 }
 
@@ -135,7 +136,7 @@ header div {
 	font-size: 1.4em;
 }
 
-.video {
+.player {
 	background: #000;
 	width: 640px;
 	height: 480px;
@@ -144,7 +145,7 @@ header div {
 /** Controls */
 .video-controls{
 	width: 640px;
-	height: 80px;
+	height: 140px;
 	background:#24C9DF;
 	background: #000;
 	border: 1px solid #222;
@@ -160,7 +161,7 @@ header div {
 	margin: 15px;
 }
 
-.seek-bar{
+#seek-bar{
 	width: 100%;
 }
 
