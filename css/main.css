@@ -142,22 +142,27 @@ header div {
 }
 
 /** Controls */
-.seek-bar{
+.video-controls{
 	width: 640px;
-	height: 20px;
+	height: 80px;
 	background:#24C9DF;
-}
-
-.video-controls div{
-	display: block;
-	float: left;
-	width: 126px;
-	height: 60px;
-	color: #ebebeb;
 	background: #000;
 	border: 1px solid #222;
 }
 
+.video-controls span{
+	color: #999;
+}
+
+.video-controls div{
+	float:left;
+	padding: 10px;
+	margin: 15px;
+}
+
+.seek-bar{
+	width: 100%;
+}
 
 /** Chat */
 
