@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 	<head>
-		<title></title>
+		<title>SMS 1401</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -9,6 +9,8 @@
 
 		<script type="text/javascript" src="js/swfobject.js"></script>
 		<script type="text/javascript" src="js/sms_setup.js"></script>
+		<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+		<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.1/firebase-simple-login.js'></script>
 
 		<link href="css/main.css" type="text/css" rel="stylesheet" />
 	</head>
@@ -16,8 +18,9 @@
 		<header>
 			<h1>Brilliant</h1>
 			<div>
-				<a>Log in with GitHub</a>
-				<a>Log in with Twitter</a>
+				<a id="github-login">Log in with GitHub</a>
+				<a id="twitter-login">Log in with Twitter</a>
+				<a id="logout">Log Out</a>
 			</div>
 		</header>
 		<div id="content">
@@ -38,7 +41,9 @@
 				<div class="video-controls">
 					<input type="range" value="0" min="0" max="100" id="seek-bar" />
 					<input type="text" id="playback-title" value="hobbit_vp6" />
-					<button id="start-playing">Start Playing</button>
+					<button id="start-playing">
+						Start Playing
+					</button>
 					<button id="play-pause">
 						Play/Pause
 					</button>
@@ -56,12 +61,6 @@
 					</div>
 				</div>
 
-				<div class="video-details">
-					<h3>Details</h3>
-					<p>
-						Details Here
-					</p>
-				</div>
 			</div>
 			<div id="chat">
 
@@ -71,121 +70,25 @@
 
 				<div class="message-container">
 
-					<!-- This DIV will be a chat message later -->
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
-					<div class="message">
-						<img class="message-image" />
-						<span class="message-name"></span>
-						<p class="message-content">
-							Message here
-						</p>
-					</div>
-
 				</div>
 
 				<div class="message-input-container">
 					<textarea id="message_input" placeholder="Write your comment here..."></textarea>
-					<button id="message_button">
+					<button id="message-button">
 						Send
 					</button>
 				</div>
-				<div class="site-intro">
-					<h3>What is Brilliant?</h3>
-					<div>
-						<p>
-							Brilliant is a website that teaches you about all things web development. We have videos and articles that are suitable for developers of all skill levels. Whether you are just starting out or are looking to further your expertise, we have you covered!
-						</p>
-						<span>Your journey to brilliance starts here</span>
-						<a>Log in with GitHub</a>
-						<a>Log in with Twitter</a>
-					</div>
+			</div>
+			<div class="content-spacer"></div>
+			<div class="site-intro">
+				<h3>What is Brilliant?</h3>
+				<div>
+					<p>
+						Brilliant is a website that teaches you about all things web development. We have videos and articles that are suitable for developers of all skill levels. Whether you are just starting out or are looking to further your expertise, we have you covered!
+					</p>
+					<span>Your journey to brilliance starts here</span>
+					<a>Log in with GitHub</a>
+					<a>Log in with Twitter</a>
 				</div>
 			</div>
 			<footer>

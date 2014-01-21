@@ -53,7 +53,7 @@ a {
 	color: #24c9df;
 }
 
-a:hover{
+a:hover {
 	text-decoration: underline;
 }
 
@@ -71,12 +71,12 @@ h3, header a {
 	font-size: 16px;
 }
 
-h3{
+h3 {
 	color: #f16935;
 }
 
-header a{
-	display:block;
+header a {
+	display: block;
 	background: #fa7d4d;
 	padding: 1px 10px;
 	color: #fff;
@@ -107,23 +107,27 @@ header div {
 	font-family: sans-serif;
 }
 
-.site-intro {
-	margin: 20px 0;
-	border: 1px solid #ffc785;
-	border-radius: 4px;
+.content-spacer{
+	height: 0;
+	clear:both;
+	padding: 5px 0;
 }
 
-.site-intro h3{
-	background:#ffc785;
+.site-intro {
+	border: 1px solid #ffc785;
+	border-radius: 4px;	
+}
+
+.site-intro h3 {
+	background: #ffc785;
 	height: 30px;
 	line-height: 30px;
 	display: block;
 }
 
-.site-intro h3, .site-intro div{
+.site-intro h3, .site-intro div {
 	padding: 5px 10px;
 }
-
 
 /** Video */
 
@@ -143,26 +147,26 @@ header div {
 }
 
 /** Controls */
-.video-controls{
-	width: 640px;
+.video-controls {
+	width: 638px;
 	height: 140px;
-	background:#24C9DF;
+	background: #24C9DF;
 	background: #000;
 	border: 1px solid #222;
 }
 
-.video-controls span{
+.video-controls span {
 	color: #999;
 }
 
-.video-controls div{
-	float:left;
+.video-controls div {
+	float: left;
 	padding: 10px;
 	margin: 15px;
 }
 
-#seek-bar{
-	width: 100%;
+#seek-bar {
+	width: 99%;
 }
 
 /** Chat */
@@ -170,7 +174,7 @@ header div {
 #chat {
 	float: right;
 	display: block;
-	width: 280px;
+	width: 310px;
 }
 
 .message-header {
@@ -181,12 +185,16 @@ header div {
 
 .message-container {
 	border: 1px solid #f2b578;
-	height: 455px;
+	height: 515px;
 	overflow-y: scroll;
 }
 
 .message {
 	padding: 10px;
+}
+
+.message p{
+	word-wrap: break-word;
 }
 
 .message:nth-child(even) {
@@ -209,7 +217,7 @@ header div {
 	resize: none;
 }
 
-#message_button {
+#message-button {
 	background: #fa7d4d;
 	float: right;
 	width: 20%;

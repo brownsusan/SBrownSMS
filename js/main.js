@@ -1,26 +1,77 @@
 var seeking = true;
 var videoDuration = 0;
+var username = '';
+var chatRef = new Firebase('https://sweltering-fire-8726.firebaseio.com/');
+
+var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+
+	if (error) {
+		// an error occurred while attempting login
+	} else if (user) {
+		// user authenticated with Firebase
+		username = user.username;
+		$('#github-login').hide();
+		$('#twitter-login').hide();
+		$('#logout').show();
+	} else {
+		// user is logged out
+		$('#logout').hide();
+		$('#github-login').show();
+		$('#twitter-login').show();
+
+		$("#github-login").click(function() {
+			auth.login('github');
+			username = user.username;
+		})
+
+		$("#twitter-login").click(function() {
+			auth.login('twitter');
+			username = user.username;
+		})
+	}
+
+});
+
+$('#logout').click(function() {
+	auth.logout();
+});
+
+$('#message-button').click(function(e) {
+	var text = $('#message_input').val();
+	chatRef.push({
+		text : text,
+		username : username
+	});
+	$('#message_input').val('');
+});
+
+chatRef.limit(40).on('child_added', function(snapshot) {
+
+	var message = snapshot.val();
+
+	var messageHtml = '<div class="message">' + '<span class="message-name">' + message.username + '</span>' + '<p class="message-content">' + message.text + '</p>' + '</div>';
+
+	$(messageHtml).appendTo($('.message-container'));
+
+	$('.message-container')[0].scrollTop = $('.message-container')[0].scrollHeight;
+});
 
 function flashReady() {
 	var cameras = flash.getCameras();
 	var mics = flash.getMicrophones();
 
 	for (var i = 0, j = cameras.length; i < j; i++) {
-
 		$('#cameras').append($('<option>', {
 			'value' : i,
 			'text' : cameras[i]
 		}));
-
 	}
 
 	for (var i = 0, j = mics.length; i < j; i++) {
-
 		$('#mics').append($('<option>', {
 			'value' : i,
 			'text' : mics[i]
 		}));
-
 	}
 
 	flash.connect('rtmp://localhost/SMSServer');
@@ -50,10 +101,6 @@ function flashReady() {
 		flash.setTime(videoTime);
 	});
 
-	$(".record").on("click", function() {
-		console.log('record');
-	});
-
 	$('#volume').change(function() {
 
 		var videoVolume = $(this).val() / 100;
@@ -61,7 +108,7 @@ function flashReady() {
 		flash.setVolume(videoVolume);
 
 	});
-
+	//TEST RECORDING
 	$('#start-recording').click(function() {
 
 		var filename = $('#recording-title').val();
