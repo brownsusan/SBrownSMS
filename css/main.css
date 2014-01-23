@@ -69,6 +69,7 @@ h1, h2, h3, h4, a {
 a {
 	display: block;
 	color: #24c9df;
+	font-size: 16px;
 }
 
 a:hover {
@@ -218,6 +219,13 @@ input[type="range"]{
 	border: 1px solid #f2b578;
 	height: 555px;
 	overflow-y: scroll;
+}
+
+.message-name{
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	margin: 0 10px;
 }
 
 .message {

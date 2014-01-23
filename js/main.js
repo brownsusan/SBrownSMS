@@ -14,7 +14,7 @@ var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
 		$('.message-input-container').show();
 		$('.chat-login-memo').hide();
 		$('#logout').show();
-		
+
 		username = user.username;
 		if (user.provider == 'twitter') {
 			image = user.profile_image_url;
@@ -50,7 +50,7 @@ $('#message-button').click(function(e) {
 	chatRef.push({
 		text : text,
 		username : username,
-		image: image
+		image : image
 	});
 	$('#message_input').val('');
 });
@@ -59,7 +59,7 @@ chatRef.limit(40).on('child_added', function(snapshot) {
 
 	var message = snapshot.val();
 
-	var messageHtml = '<div class="message">' + '<span class="message-name">' + '<img width = "22" height="22" src="'+ message.image +'">'+message.username + '</span>' + '<p class="message-content">' + message.text + '</p>' + '</div>';
+	var messageHtml = '<div class="message">' + '<img width = "22" height="22" src="' + message.image + '">' + '<span class="message-name">' + message.username + '</span>' + '<p class="message-content">' + message.text + '</p>' + '</div>';
 
 	$(messageHtml).appendTo($('.message-container'));
 
