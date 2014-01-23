@@ -40,23 +40,25 @@
 
 				<div class="video-controls">
 					<input type="range" value="0" min="0" max="100" id="seek-bar" />
-					<input type="text" id="playback-title" value="hobbit_vp6" />
-					<button id="start-playing">
-						Start Playing
-					</button>
-					<button id="play-pause">
-						Play/Pause
-					</button>
-					<input type="range" value="100" min="0" max="100" id="volume" />
+					<div>
+						<input type="text" id="playback-title" value="hobbit_vp6" />
+						<button id="start-playing">
+							Start Playing
+						</button>
+						<button id="play-pause">
+							Play/Pause
+						</button>
+						<input type="range" value="100" min="0" max="100" id="volume" />
+					</div>
 					<div>
 						<input type="text" id="recording-title" placeholder="Enter a title for your recording" />
 						<select id="cameras"></select>
 						<select id="mics"></select>
 						<button id="start-recording">
-							Start Recording
+							Record
 						</button>
 						<button id="stop-recording">
-							Stop Recording
+							Stop
 						</button>
 					</div>
 				</div>
@@ -77,6 +79,10 @@
 					<button id="message-button">
 						Send
 					</button>
+				</div>
+
+				<div class="chat-login-memo">
+					<span>Please log in to use the chat feature.</span>
 				</div>
 			</div>
 			<div class="content-spacer"></div>

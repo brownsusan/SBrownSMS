@@ -12,10 +12,14 @@ var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
 		username = user.username;
 		$('#github-login').hide();
 		$('#twitter-login').hide();
+		$('.message-input-container').show();
+		$('.chat-login-memo').hide();
 		$('#logout').show();
 	} else {
 		// user is logged out
 		$('#logout').hide();
+		$('.message-input-container').hide();
+		$('.chat-login-memo').show();
 		$('#github-login').show();
 		$('#twitter-login').show();
 
