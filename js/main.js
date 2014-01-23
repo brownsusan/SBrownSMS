@@ -9,12 +9,19 @@ var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
 		// an error occurred while attempting login
 	} else if (user) {
 		// user authenticated with Firebase
-		username = user.username;
 		$('#github-login').hide();
 		$('#twitter-login').hide();
 		$('.message-input-container').show();
 		$('.chat-login-memo').hide();
 		$('#logout').show();
+		
+		username = user.username;
+		if (user.provider == 'twitter') {
+			image = user.profile_image_url;
+		}
+		if (user.provider == 'github') {
+			image = user.avatar_url;
+		}
 	} else {
 		// user is logged out
 		$('#logout').hide();
@@ -25,12 +32,10 @@ var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
 
 		$("#github-login").click(function() {
 			auth.login('github');
-			username = user.username;
 		})
 
 		$("#twitter-login").click(function() {
 			auth.login('twitter');
-			username = user.username;
 		})
 	}
 
@@ -44,7 +49,8 @@ $('#message-button').click(function(e) {
 	var text = $('#message_input').val();
 	chatRef.push({
 		text : text,
-		username : username
+		username : username,
+		image: image
 	});
 	$('#message_input').val('');
 });
@@ -53,7 +59,7 @@ chatRef.limit(40).on('child_added', function(snapshot) {
 
 	var message = snapshot.val();
 
-	var messageHtml = '<div class="message">' + '<span class="message-name">' + message.username + '</span>' + '<p class="message-content">' + message.text + '</p>' + '</div>';
+	var messageHtml = '<div class="message">' + '<span class="message-name">' + '<img width = "22" height="22" src="'+ message.image +'">'+message.username + '</span>' + '<p class="message-content">' + message.text + '</p>' + '</div>';
 
 	$(messageHtml).appendTo($('.message-container'));
 
