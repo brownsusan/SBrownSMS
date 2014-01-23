@@ -36,16 +36,21 @@ table {
 /** Global */
 
 button {
-	background: #45484d; /* Old browsers */
-	background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
-	color:#EBEBEB;
-	border: 1px solid #333;
-	cursor:pointer;
+	background: #fefefe; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(49%,#d1d1d1), color-stop(50%,#dbdbdb), color-stop(100%,#e2e2e2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* W3C */
+	color: #EBEBEB;
+	border: 1px solid #e0e0e0;
+	cursor: pointer;
+}
+
+button img{
+	width: 15px;
+	height: 15px;
 }
 
 header {
@@ -114,6 +119,14 @@ header div {
 	margin-right: 20px;
 }
 
+input[type="range"]{
+	background-color: #D1D1D1;
+    height: 15px;
+    width: 170px;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
+}
+
 /** Main */
 
 #content {
@@ -165,9 +178,8 @@ header div {
 .video-controls {
 	width: 638px;
 	height: 180px;
-	background: #24C9DF;
-	background: #000;
-	border: 1px solid #222;
+	background: #EBEBEB;
+	border: 1px solid #e8e8e8;
 }
 
 .video-controls div {
