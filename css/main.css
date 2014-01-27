@@ -276,3 +276,13 @@ input[type="range"]{
 	height: 100%;
 }
 
+footer{
+	background: #FA7D4D;
+	color: #fff;
+	height: 70px;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+	margin: 20px 0 0 0;
+}
+
