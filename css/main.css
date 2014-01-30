@@ -145,6 +145,7 @@ input[type="range"]{
 
 .site-intro {
 	border: 1px solid #ffc785;
+	background: #fff;
 }
 
 .site-intro h3 {
@@ -177,10 +178,13 @@ input[type="range"]{
 
 /** Controls */
 .video-controls {
-	width: 638px;
-	height: 180px;
+	width: 618px;
+	height: 171px;
+	padding: 10px;
+	padding-bottom: 0;
 	background: #EBEBEB;
-	border: 1px solid #e8e8e8;
+	border: 1px solid #ffc785;
+	border-top:none;
 }
 
 .video-controls div {
@@ -207,6 +211,7 @@ input[type="range"]{
 	float: right;
 	display: block;
 	width: 300px;
+	background: #fff;
 }
 
 .message-header {
@@ -277,7 +282,8 @@ input[type="range"]{
 }
 
 footer{
-	background: #FA7D4D;
+	background: #f16935;
+	background-image: url('/img/wood.png');
 	color: #fff;
 	height: 70px;
 	padding: 10px 0;
